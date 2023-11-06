@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2023-01-09/2023-01-09?apiKey=YeLJjDMr8LFD7plQfCkbWqAJsmGHxSv3",
+			"url": "https://api.polygon.io/",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
