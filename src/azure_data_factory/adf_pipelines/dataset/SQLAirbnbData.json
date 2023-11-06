@@ -1,0 +1,108 @@
+{
+	"name": "SQLAirbnbData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ConexaoAzureDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Prática 01"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "price",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "bedrooms",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "bathrooms",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "sqft_living",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sqft_lot",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "floors",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "waterfront",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "view",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "condition",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sqft_above",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sqft_basement",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "yr_built",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "yr_renovated",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "street",
+				"type": "text"
+			},
+			{
+				"name": "city",
+				"type": "text"
+			},
+			{
+				"name": "statezip",
+				"type": "text"
+			},
+			{
+				"name": "country",
+				"type": "text"
+			}
+		],
+		"typeProperties": {
+			"schema": "airbnb",
+			"table": "data2"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

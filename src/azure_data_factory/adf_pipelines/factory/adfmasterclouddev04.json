@@ -1,0 +1,9 @@
+{
+	"name": "adfmasterclouddev04",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1b75c330-a28b-4afc-aacf-6486abb8b8f6",
+		"tenantId": "94b50080-3018-4443-b677-0cd2fef81ccc"
+	}
+}
