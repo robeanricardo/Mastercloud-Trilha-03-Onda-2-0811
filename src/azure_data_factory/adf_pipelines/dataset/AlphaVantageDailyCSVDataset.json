@@ -1,0 +1,27 @@
+{
+	"name": "AlphaVantageDailyCSVDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ConexaoStorageAccountMastercloudTrilha03sa",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Prática 02"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "raw.csv",
+				"folderPath": "silver",
+				"container": "alphavantage"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

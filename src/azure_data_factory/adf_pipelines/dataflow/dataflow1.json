@@ -1,0 +1,51 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AlphaVantageRestDataDataset",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AlphaVantageDailyCSVDataset",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "flatten1"
+				}
+			],
+			"scriptLines": [
+				"parameters{",
+				"     symbol as string (\"BBDC4.SA\")",
+				"}",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: true,",
+				"     inferDriftedColumnTypes: true,",
+				"     httpMethod: 'GET',",
+				"     timeout: 30,",
+				"     requestInterval: 0,",
+				"     paginationRules: ['supportRFC5988' -> 'true'],",
+				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'documentPerLine']) ~> source1",
+				"source1 foldDown(unroll(),",
+				"     skipDuplicateMapInputs: false,",
+				"     skipDuplicateMapOutputs: false) ~> flatten1",
+				"flatten1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}

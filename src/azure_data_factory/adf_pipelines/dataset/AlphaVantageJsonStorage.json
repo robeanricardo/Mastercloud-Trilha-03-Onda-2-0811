@@ -1,5 +1,5 @@
 {
-	"name": "AlphaVantageDailyDataset",
+	"name": "AlphaVantageJsonStorage",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ConexaoStorageAccountMastercloudTrilha03sa",
@@ -21,14 +21,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@concat('alphavantage_daily_', utcnow('yyyyMMddHHmmss'), '.json')",
-					"type": "Expression"
-				},
-				"folderPath": {
-					"value": "@concat(dataset().layer, '/date_reference=', utcnow('yyyy-MM-dd'), '/ticket=', dataset().symbol)",
-					"type": "Expression"
-				},
+				"fileName": "alphavantage_daily_20231106134129.json",
+				"folderPath": "raw/date_reference=2023-11-06/ticket=BBDC4.SA",
 				"container": "alphavantage"
 			}
 		},
@@ -59,26 +53,6 @@
 					"type": "object",
 					"properties": {
 						"2023-11-03": {
-							"type": "object",
-							"properties": {
-								"1. open": {
-									"type": "string"
-								},
-								"2. high": {
-									"type": "string"
-								},
-								"3. low": {
-									"type": "string"
-								},
-								"4. close": {
-									"type": "string"
-								},
-								"5. volume": {
-									"type": "string"
-								}
-							}
-						},
-						"2023-11-02": {
 							"type": "object",
 							"properties": {
 								"1. open": {
@@ -359,26 +333,6 @@
 							}
 						},
 						"2023-10-13": {
-							"type": "object",
-							"properties": {
-								"1. open": {
-									"type": "string"
-								},
-								"2. high": {
-									"type": "string"
-								},
-								"3. low": {
-									"type": "string"
-								},
-								"4. close": {
-									"type": "string"
-								},
-								"5. volume": {
-									"type": "string"
-								}
-							}
-						},
-						"2023-10-12": {
 							"type": "object",
 							"properties": {
 								"1. open": {
@@ -878,26 +832,6 @@
 								}
 							}
 						},
-						"2023-09-07": {
-							"type": "object",
-							"properties": {
-								"1. open": {
-									"type": "string"
-								},
-								"2. high": {
-									"type": "string"
-								},
-								"3. low": {
-									"type": "string"
-								},
-								"4. close": {
-									"type": "string"
-								},
-								"5. volume": {
-									"type": "string"
-								}
-							}
-						},
 						"2023-09-06": {
 							"type": "object",
 							"properties": {
@@ -919,6 +853,26 @@
 							}
 						},
 						"2023-09-05": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
+						"2023-09-04": {
 							"type": "object",
 							"properties": {
 								"1. open": {
@@ -1798,6 +1752,26 @@
 								}
 							}
 						},
+						"2023-07-04": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
 						"2023-07-03": {
 							"type": "object",
 							"properties": {
@@ -1998,6 +1972,26 @@
 								}
 							}
 						},
+						"2023-06-19": {
+							"type": "object",
+							"properties": {
+								"1. open": {
+									"type": "string"
+								},
+								"2. high": {
+									"type": "string"
+								},
+								"3. low": {
+									"type": "string"
+								},
+								"4. close": {
+									"type": "string"
+								},
+								"5. volume": {
+									"type": "string"
+								}
+							}
+						},
 						"2023-06-16": {
 							"type": "object",
 							"properties": {
@@ -2059,6 +2053,12 @@
 							}
 						}
 					}
+				},
+				"date_reference": {
+					"type": "string"
+				},
+				"ticket": {
+					"type": "string"
 				}
 			}
 		}
