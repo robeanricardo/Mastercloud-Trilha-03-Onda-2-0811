@@ -1,0 +1,10 @@
+{
+	"name": "MastercloudVault",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kvmastercloud03dev.vault.azure.net/"
+		}
+	}
+}
