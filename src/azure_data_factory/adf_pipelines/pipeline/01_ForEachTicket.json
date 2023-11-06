@@ -1,0 +1,182 @@
+{
+	"name": "01_ForEachTicket",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "RestResource1",
+						"type": "DatasetReference",
+						"parameters": {
+							"apikey": {
+								"value": "@pipeline().parameters.apikey",
+								"type": "Expression"
+							},
+							"ticket": {
+								"value": "@variables('tickets')",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Json1",
+						"type": "DatasetReference",
+						"parameters": {
+							"camada": {
+								"value": "@concat(pipeline().parameters.camada_2)",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('tickets')",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy data1_copy1",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "RestSource",
+									"httpRequestTimeout": "00:01:40",
+									"requestInterval": "00.00:00:00.010",
+									"requestMethod": "GET",
+									"paginationRules": {
+										"supportRFC5988": "true"
+									}
+								},
+								"sink": {
+									"type": "JsonSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "JsonWriteSettings"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "RestResource1",
+									"type": "DatasetReference",
+									"parameters": {
+										"apikey": {
+											"value": "@pipeline().parameters.apikey",
+											"type": "Expression"
+										},
+										"ticket": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Json1",
+									"type": "DatasetReference",
+									"parameters": {
+										"camada": {
+											"value": "@concat(pipeline().parameters.camada_2)",
+											"type": "Expression"
+										},
+										"ticket": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"camada_1": {
+				"type": "string",
+				"defaultValue": "bruto"
+			},
+			"camada_2": {
+				"type": "string",
+				"defaultValue": "refinado"
+			},
+			"camada_3": {
+				"type": "string",
+				"defaultValue": "finalizado"
+			},
+			"apikey": {
+				"type": "string",
+				"defaultValue": "YeLJjDMr8LFD7plQfCkbWqAJsmGHxSv3"
+			}
+		},
+		"variables": {
+			"tickets": {
+				"type": "Array",
+				"defaultValue": [
+					"AAPL",
+					"MSFT"
+				]
+			}
+		},
+		"folder": {
+			"name": "Prática 02"
+		},
+		"annotations": []
+	}
+}

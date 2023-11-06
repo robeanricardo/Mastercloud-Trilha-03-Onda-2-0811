@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "02_Copy_From_Bronze_to_Silver",
 	"properties": {
 		"activities": [
 			{
