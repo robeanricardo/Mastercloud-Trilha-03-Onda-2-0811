@@ -1,0 +1,10 @@
+{
+	"name": "kvmasterclouddev04",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kvmasterclouddev04.vault.azure.net/"
+		}
+	}
+}
