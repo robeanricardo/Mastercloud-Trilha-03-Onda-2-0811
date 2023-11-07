@@ -195,8 +195,8 @@ def run_sample():
             container = db.get_container_client(CONTAINER_ID)
             print('Container with id \'{0}\' was found'.format(CONTAINER_ID))
 
-        scale_container(container)
-        create_items(container)
+        # scale_container(container)
+        # create_items(container)
         read_item(container, 'SalesOrder1', 'Account1')
         # read_items(container)
         # query_items(container, 'Account1')
