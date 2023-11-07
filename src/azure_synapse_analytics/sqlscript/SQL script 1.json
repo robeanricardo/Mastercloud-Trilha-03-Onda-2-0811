@@ -2,7 +2,7 @@
 	"name": "SQL script 1",
 	"properties": {
 		"content": {
-			"query": "-- This is auto-generated code\nSELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://samasterclouddev01.blob.core.windows.net/airbnb/input/listings.csv',\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0'\n    ) AS [result]\n",
+			"query": "-- This is auto-generated code\nSELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://samasterclouddev01.dfs.core.windows.net/azuresynapse/listing.parquet',\n        FORMAT = 'PARQUET'\n    ) AS [result]\n",
 			"metadata": {
 				"language": "sql"
 			},

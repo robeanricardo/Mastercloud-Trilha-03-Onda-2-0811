@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 4",
+	"properties": {
+		"content": {
+			"query": "IF NOT EXISTS (SELECT * FROM sys.objects O JOIN sys.schemas S ON O.schema_id = S.schema_id WHERE O.NAME = 'airbnb' AND O.TYPE = 'U' AND S.NAME = 'dbo')\nCREATE TABLE dbo.airbnb\n\t(\n\t [C1] nvarchar(4000),\n\t [C2] nvarchar(4000),\n\t [C3] nvarchar(4000),\n\t [C4] nvarchar(4000),\n\t [C5] nvarchar(4000),\n\t [C6] nvarchar(4000),\n\t [C7] nvarchar(4000),\n\t [C8] nvarchar(4000),\n\t [C9] nvarchar(4000),\n\t [C10] nvarchar(4000),\n\t [C11] nvarchar(4000),\n\t [C12] nvarchar(4000),\n\t [C13] nvarchar(4000),\n\t [C14] nvarchar(4000),\n\t [C15] nvarchar(4000),\n\t [C16] nvarchar(4000),\n\t [C17] nvarchar(4000),\n\t [C18] nvarchar(4000)\n\t)\nWITH\n\t(\n\tDISTRIBUTION = ROUND_ROBIN,\n\t CLUSTERED COLUMNSTORE INDEX\n\t -- HEAP\n\t)\nGO\n\n--Uncomment the 4 lines below to create a stored procedure for data pipeline orchestration​\n--CREATE PROC bulk_load_airbnb\n--AS\n--BEGIN\nCOPY INTO dbo.airbnb\n(C1 1, C2 2, C3 3, C4 4, C5 5, C6 6, C7 7, C8 8, C9 9, C10 10, C11 11, C12 12, C13 13, C14 14, C15 15, C16 16, C17 17, C18 18)\nFROM 'https://samasterclouddev01.dfs.core.windows.net/azuresynapse/listings.txt'\nWITH\n(\n\tFILE_TYPE = 'CSV'\n\t,MAXERRORS = 0\n\t,ERRORFILE = 'https://samasterclouddev01.dfs.core.windows.net/azuresynapse/'\n)\n--END\nGO\n\nSELECT TOP 100 * FROM dbo.airbnb\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "SQLPool",
+				"poolName": "SQLPool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

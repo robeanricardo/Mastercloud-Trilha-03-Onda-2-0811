@@ -1,0 +1,20 @@
+{
+	"name": "CreateTableFromParquet",
+	"properties": {
+		"folder": {
+			"name": "Prática 01"
+		},
+		"content": {
+			"query": "IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'SynapseParquetFormat') \n\tCREATE EXTERNAL FILE FORMAT [SynapseParquetFormat] \n\tWITH ( FORMAT_TYPE = PARQUET)\nGO\n\nIF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'azuresynapse_samasterclouddev01_dfs_core_windows_net') \n\tCREATE EXTERNAL DATA SOURCE [azuresynapse_samasterclouddev01_dfs_core_windows_net] \n\tWITH (\n\t\tLOCATION = 'abfss://azuresynapse@samasterclouddev01.dfs.core.windows.net' \n\t)\nGO\n\nCREATE EXTERNAL TABLE dbo.listings (\n\t[id] nvarchar(4000),\n\t[name] nvarchar(4000),\n\t[host_id] nvarchar(4000),\n\t[host_name] nvarchar(4000),\n\t[neighbourhood_group] nvarchar(4000),\n\t[neighbourhood] nvarchar(4000),\n\t[latitude] nvarchar(4000),\n\t[longitude] nvarchar(4000),\n\t[room_type] nvarchar(4000),\n\t[price] nvarchar(4000),\n\t[minimum_nights] nvarchar(4000),\n\t[number_of_reviews] nvarchar(4000),\n\t[last_review] nvarchar(4000),\n\t[reviews_per_month] nvarchar(4000),\n\t[calculated_host_listings_count] nvarchar(4000),\n\t[availability_365] nvarchar(4000),\n\t[number_of_reviews_ltm] nvarchar(4000),\n\t[license] nvarchar(4000)\n\t)\n\tWITH (\n\tLOCATION = 'listing.parquet',\n\tDATA_SOURCE = [azuresynapse_samasterclouddev01_dfs_core_windows_net],\n\tFILE_FORMAT = [SynapseParquetFormat]\n\t)\nGO\n\n\nSELECT TOP 100 * FROM dbo.listings\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "airbnb",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

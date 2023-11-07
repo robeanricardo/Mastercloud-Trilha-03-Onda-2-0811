@@ -2,12 +2,12 @@
 	"name": "SQL script 2",
 	"properties": {
 		"content": {
-			"query": "-- This is auto-generated code\nSELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK     'https://azureopendatastorage.blob.core.windows.net/mlsamples/diabetes/*.parquet',\n        FORMAT = 'parquet'\n    ) AS [result];",
+			"query": "SELECT TOP 100 * FROM dbo.listings\nGo",
 			"metadata": {
 				"language": "sql"
 			},
 			"currentConnection": {
-				"databaseName": "master",
+				"databaseName": "airbnb",
 				"poolName": "Built-in"
 			},
 			"resultLimit": 5000
