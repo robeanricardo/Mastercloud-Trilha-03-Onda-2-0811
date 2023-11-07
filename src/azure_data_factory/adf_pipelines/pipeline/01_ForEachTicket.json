@@ -162,7 +162,7 @@
 			},
 			"apikey": {
 				"type": "string",
-				"defaultValue": "YeLJjDMr8LFD7plQfCkbWqAJsmGHxSv3"
+				"defaultValue": "@linkedService(\"MastercloudVault\").secret.polygonkey"
 			}
 		},
 		"variables": {
