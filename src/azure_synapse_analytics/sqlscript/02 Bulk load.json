@@ -1,6 +1,9 @@
 {
-	"name": "SQL script 1",
+	"name": "02 Bulk load",
 	"properties": {
+		"folder": {
+			"name": "Prática 01"
+		},
 		"content": {
 			"query": "-- This is auto-generated code\nSELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://samasterclouddev01.dfs.core.windows.net/azuresynapse/listing.parquet',\n        FORMAT = 'PARQUET'\n    ) AS [result]\n",
 			"metadata": {

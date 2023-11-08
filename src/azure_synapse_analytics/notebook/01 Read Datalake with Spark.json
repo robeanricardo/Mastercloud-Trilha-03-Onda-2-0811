@@ -1,6 +1,9 @@
 {
-	"name": "Notebook 2",
+	"name": "01 Read Datalake with Spark",
 	"properties": {
+		"folder": {
+			"name": "Prática 02"
+		},
 		"nbformat": 4,
 		"nbformat_minor": 2,
 		"sessionProperties": {
@@ -13,7 +16,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "026d1323-9771-4e4d-b02f-76d64983d4e5"
+				"spark.autotune.trackingId": "9441b140-cb0b-4693-9d81-c8ae9e640b1c"
 			}
 		},
 		"metadata": {

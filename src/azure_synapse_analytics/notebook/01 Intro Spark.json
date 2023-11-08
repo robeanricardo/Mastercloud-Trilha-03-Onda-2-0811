@@ -1,6 +1,9 @@
 {
-	"name": "Notebook 1",
+	"name": "01 Intro Spark",
 	"properties": {
+		"folder": {
+			"name": "Prática 01"
+		},
 		"nbformat": 4,
 		"nbformat_minor": 2,
 		"bigDataPool": {
@@ -18,14 +21,11 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "f0cc7b88-f66e-4825-9e26-75f99bb3e925"
+				"spark.autotune.trackingId": "c92929b6-57f3-4a49-8308-8a62daa15bf6"
 			}
 		},
 		"metadata": {
 			"saveOutput": true,
-			"synapse_widget": {
-				"version": "0.1"
-			},
 			"enableDebugMode": false,
 			"kernelspec": {
 				"name": "synapse_pyspark",
@@ -41,14 +41,13 @@
 				"endpoint": "https://masterclouddev.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/ApacheSpark",
 				"auth": {
 					"type": "AAD",
-					"authResource": "https://dev.azuresynapse.net",
-					"authHeader": null
+					"authResource": "https://dev.azuresynapse.net"
 				},
 				"sparkVersion": "3.3",
 				"nodeCount": 3,
 				"cores": 4,
 				"memory": 28,
-				"extraHeader": null
+				"automaticScaleJobs": false
 			},
 			"sessionKeepAliveTimeout": 30
 		},
@@ -225,7 +224,8 @@
 				},
 				"source": [
 					"display(df.limit(10))"
-				]
+				],
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",

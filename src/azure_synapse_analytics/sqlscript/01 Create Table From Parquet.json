@@ -1,5 +1,5 @@
 {
-	"name": "CreateTableFromParquet",
+	"name": "01 Create Table From Parquet",
 	"properties": {
 		"folder": {
 			"name": "Prática 01"

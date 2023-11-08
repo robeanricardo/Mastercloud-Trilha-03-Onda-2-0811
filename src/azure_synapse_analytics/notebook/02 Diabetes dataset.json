@@ -1,6 +1,9 @@
 {
-	"name": "Notebook 3",
+	"name": "02 Diabetes dataset",
 	"properties": {
+		"folder": {
+			"name": "Prática 02"
+		},
 		"nbformat": 4,
 		"nbformat_minor": 2,
 		"sessionProperties": {
@@ -13,7 +16,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "20269e06-9720-43da-9b1a-4a895fc5592e"
+				"spark.autotune.trackingId": "e55ed94a-2a59-4d80-8c20-f83167b5f713"
 			}
 		},
 		"metadata": {
