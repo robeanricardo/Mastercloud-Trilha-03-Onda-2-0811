@@ -5,8 +5,8 @@
 		"annotations": [],
 		"type": "AzureBlobStorage",
 		"typeProperties": {
-			"connectionString": "DefaultEndpointsProtocol=https;AccountName=samasterclouddev01;EndpointSuffix=core.windows.net;",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlNZTkFQU0VAN0VFMUFEMTktQjg1Ny00RDY1LUJDRUEtMTNDNjkxNzMyQTgxXzU2YThjMThlLTdjZTMtNDNiMC1iNDQ0LWJmMDUxMDhkYWQ5NCINCn0="
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=mastercdevsynapse;EndpointSuffix=core.windows.net;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlNZTkFQU0VARDdCNzZEOEQtNUNDRC00NTk4LTgxRTYtNjc0QTU1RkIwQzA3X2Y2YjQ0YWRlLTg0ZTYtNDdlZi05ODU3LTcwYjJjYTBlMjE0YSINCn0="
 		},
 		"connectVia": {
 			"referenceName": "AutoResolveIntegrationRuntime",
