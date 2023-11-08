@@ -20,7 +20,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "79ce86c1-f3bf-4823-9233-b6d2f0e1573e"
+				"spark.autotune.trackingId": "79247d64-bfba-4cde-a49e-4cfe12b746ac"
 			}
 		},
 		"metadata": {
@@ -324,6 +324,24 @@
 					}
 				},
 				"source": [
+					"df_silver.explain(\"EXTENDED\")"
+				],
+				"execution_count": 39
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
 					"df_silver.write.parquet(\n",
 					"    path='abfss://azuresynapse@samasterclouddev01.dfs.core.windows.net/nyc_taxi/silver',\n",
 					"    mode='overwrite'\n",
@@ -431,10 +449,11 @@
 				"source": [
 					"df_gold.write.parquet(\n",
 					"    path='abfss://azuresynapse@samasterclouddev01.dfs.core.windows.net/nyc_taxi/gold/',\n",
-					"    mode='overwrite'\n",
+					"    mode='overwrite',\n",
+					"    partitionBy='paymentType'\n",
 					")"
 				],
-				"execution_count": 35
+				"execution_count": 36
 			}
 		]
 	}
