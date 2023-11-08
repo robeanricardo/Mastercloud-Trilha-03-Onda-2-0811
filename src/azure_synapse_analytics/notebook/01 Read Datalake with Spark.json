@@ -6,6 +6,10 @@
 		},
 		"nbformat": 4,
 		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "ApacheSpark",
+			"type": "BigDataPoolReference"
+		},
 		"sessionProperties": {
 			"driverMemory": "28g",
 			"driverCores": 4,
@@ -16,7 +20,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "18017ee3-a923-4171-b44a-abee18cc9882"
+				"spark.autotune.trackingId": "4d1adaf1-57ab-4845-8723-52ae0b6f7dfa"
 			}
 		},
 		"metadata": {
@@ -24,10 +28,25 @@
 			"enableDebugMode": false,
 			"kernelspec": {
 				"name": "synapse_pyspark",
-				"display_name": "python"
+				"display_name": "Synapse PySpark"
 			},
 			"language_info": {
 				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/2dc921a3-dfe2-4fdf-aa1a-d089e2c5cc4e/resourceGroups/mastercloud-trilha-03/providers/Microsoft.Synapse/workspaces/masterclouddev/bigDataPools/ApacheSpark",
+				"name": "ApacheSpark",
+				"type": "Spark",
+				"endpoint": "https://masterclouddev.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/ApacheSpark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "3.3",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"automaticScaleJobs": false
 			},
 			"sessionKeepAliveTimeout": 30
 		},
@@ -61,7 +80,7 @@
 				"source": [
 					"from pyspark.sql import SparkSession"
 				],
-				"execution_count": null
+				"execution_count": 1
 			},
 			{
 				"cell_type": "markdown",
